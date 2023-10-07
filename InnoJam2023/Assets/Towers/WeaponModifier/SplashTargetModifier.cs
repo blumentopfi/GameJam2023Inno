@@ -16,7 +16,7 @@ namespace Towers.WeaponModifier
                 var colliders = Physics.OverlapSphere(t.transform.position, splashRadius);
                 foreach (var collider in colliders)
                 {
-                    if (collider.gameObject.CompareTag("Enemy"))
+                    if (collider.gameObject.CompareTag("Enemies"))
                     {
                         splashTargets.Add(collider.gameObject);
                     }

@@ -19,7 +19,7 @@ MonoBehaviour:
     StatComponents:
     - {fileID: 11400000, guid: 0cfc8563ddb894cc0afbd3b255adfe37, type: 2}
     - {fileID: 11400000, guid: a27a93053c3154450b49f13791bf5021, type: 2}
-    - {fileID: 11400000, guid: a27a93053c3154450b49f13791bf5021, type: 2}
+    - {fileID: 11400000, guid: 779ea0c737d66496f839676a9dfa4f8d, type: 2}
   - Level: 2
     Range: 150
     StatComponents:

@@ -20,14 +20,13 @@ public class EnemyHealth : MonoBehaviour
         
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
+        EnemyStats.baseHealth -= damage;
 
-        if (EnemyStats.baseHealth - damage <= 0)
+        if (EnemyStats.baseHealth <= 0)
         {
             Destroy(gameObject);
         }
-
-        EnemyStats.baseHealth -= damage;
     }
 }

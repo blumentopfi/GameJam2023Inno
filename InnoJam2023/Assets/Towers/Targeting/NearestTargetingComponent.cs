@@ -3,14 +3,20 @@ using UnityEngine;
 
 namespace Towers.Targeting
 {
-    public class NearestTargetingComponent : MonoBehaviour, ITargetingComponent
+    [CreateAssetMenu(fileName = "NearestTargetingComponent", menuName = "ScriptableObjects/NearestTargetingComponent")]
+    public class NearestTargetingComponent : TargetingComponent
     {
-        public GameObject GetTarget(List<GameObject> enemiesInRange, Vector3 towerPosition)
+        public override GameObject GetTarget(List<GameObject> enemiesInRange, Vector3 towerPosition)
         {
             GameObject nearestEnemy = null;
             float smallestDistance = Mathf.Infinity;
             foreach (GameObject enemy in enemiesInRange)
             {
+                if (!enemy.gameObject.CompareTag("Enemies"))
+                {
+                    continue;
+                }
+                
                 float distanceToEnemy = Vector3.Distance(towerPosition, enemy.transform.position);
                 if (distanceToEnemy < smallestDistance)
                 {

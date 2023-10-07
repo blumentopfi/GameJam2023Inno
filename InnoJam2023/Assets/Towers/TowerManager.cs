@@ -14,12 +14,14 @@ namespace Towers
         private TowerStats _towerStats;
         private TowerTarget _towerTarget;
         private TowerAttack _towerAttack;
-        private int level;
+        private int level = 1;
 
         private void Start()
         {
-            StartCoroutine(UpdateTarget());
             _towerTarget = GetComponent<TowerTarget>();
+            _towerAttack = GetComponent<TowerAttack>();
+            UpdateTowerStats();
+            StartCoroutine(UpdateTarget());
         }
 
         public void Construct(int level)

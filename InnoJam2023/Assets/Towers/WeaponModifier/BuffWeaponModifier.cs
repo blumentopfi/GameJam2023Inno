@@ -16,11 +16,10 @@ namespace Towers.WeaponModifier
             foreach (var target in targets)
             {
                 var effect = Instantiate(Effect, target.transform.position, Quaternion.identity);
-                effect.transform.parent = target.transform;
                 effects.Add(effect);
             }
             
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(Effect.GetComponent<ParticleSystem>().main.duration);
             
             foreach (var effect in effects)
             {

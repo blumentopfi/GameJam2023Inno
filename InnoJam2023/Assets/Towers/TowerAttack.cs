@@ -10,8 +10,8 @@ namespace Towers
 
         public void Attack(GameObject target, TowerStats statsByLevel)
         {
-            var attackRate = statsByLevel.GetStatComponent<DamageStats>().Damage;
-            if (!(Time.time - lastAttack > attackRate))
+            var fireRate = statsByLevel.GetStatComponent<DamageStats>().FireRate;
+            if (!(Time.time - lastAttack > fireRate))
             {
                 return;
             }

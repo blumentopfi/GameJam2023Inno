@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7b4fe175ad4eac8aef49805890a656, type: 3}
-  m_Name: TakeDamageWeaponModifier
+  m_Script: {fileID: 11500000, guid: c61f0bd8b01046b383bf891047f3aeb7, type: 3}
+  m_Name: RandomTargetingComponent
   m_EditorClassIdentifier: 
-  Effect: {fileID: 8430453391191005963, guid: 844815bf0f0574c8da396d69d9f15ee3, type: 3}

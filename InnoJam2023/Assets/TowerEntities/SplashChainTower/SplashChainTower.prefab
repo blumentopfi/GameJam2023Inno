@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeac539c4fa474f13bcb3bd123a1fdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetingComponent: {fileID: 11400000, guid: d81a024ae5b724128a04d5b2b4887c6b, type: 2}
 --- !u!114 &2983809930592635603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe06b34bdd644c5bba59d3f1116113d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerStatsByLevel: {fileID: 11400000, guid: c4a3dd20c02114d909a4e72027d104b5, type: 2}
+  _towerStatsByLevel: {fileID: 11400000, guid: 671ebfb70518d438b9b2e1a1aecb9887, type: 2}
 --- !u!114 &5444491680843162790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +196,6 @@ MonoBehaviour:
   weaponModifiers:
   - {fileID: 11400000, guid: d075ebd8a712f407b8c7d8ddf2dc6a38, type: 2}
   - {fileID: 11400000, guid: 23378384c05784726abafbde3f89ed91, type: 2}
-  - {fileID: 11400000, guid: 9ad39aa52dbcf451b8225577069aa364, type: 2}
 --- !u!1 &3066971882462223677
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,9 +3,10 @@ using UnityEngine;
 
 namespace Towers.Targeting
 {
-    public class RandomTargetingComponent : MonoBehaviour, ITargetingComponent
+    [CreateAssetMenu(fileName = "RandomTargetingComponent", menuName = "ScriptableObjects/RandomTargetingComponent")]
+    public class RandomTargetingComponent : TargetingComponent
     {
-        public GameObject GetTarget(List<GameObject> enemiesInRange, Vector3 towerPosition)
+        public override GameObject GetTarget(List<GameObject> enemiesInRange, Vector3 towerPosition)
         {
             if (enemiesInRange.Count == 0)
             {

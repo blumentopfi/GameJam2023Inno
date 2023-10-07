@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Towers.Targeting
 {
-    public interface ITargetingComponent
+    public abstract class TargetingComponent : ScriptableObject
     {
-        public GameObject GetTarget(List<GameObject> enemiesInRange, Vector3 towerPosition);
+        public abstract GameObject GetTarget(List<GameObject> enemiesInRange, Vector3 towerPosition);
     }
 }
