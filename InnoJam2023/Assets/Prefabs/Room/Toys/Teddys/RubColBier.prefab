@@ -76,8 +76,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3830617735559318127}
+  - component: {fileID: 4098069404447918132}
   m_Layer: 0
-  m_Name: Teddy2-rubics-cola-bier
+  m_Name: RubColBier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,6 +102,25 @@ Transform:
   - {fileID: 216893399041030361}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4098069404447918132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3557836809599566765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b1bdb4adb1647959e8cf215c8c38d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelBaby: {fileID: 7431113173223417555}
+  modelChildWasted: {fileID: 6692893567172841674}
+  modelChildNeutral: {fileID: 458871018373400241}
+  modelChildNice: {fileID: 3814269532297544633}
+  modelTeenWasted: {fileID: 8509627469778688026}
+  modelTeenNeutral: {fileID: 458871018373400241}
+  modelTeenNice: {fileID: 3814269532297544633}
 --- !u!1 &5539772235503801958
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +632,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de563d17b962d43ba9a93d4c11476afe, type: 3}
+--- !u!1 &3814269532297544633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: de563d17b962d43ba9a93d4c11476afe, type: 3}
+  m_PrefabInstance: {fileID: 4048287737566854888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4586020405667469571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: de563d17b962d43ba9a93d4c11476afe, type: 3}
@@ -962,6 +987,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 357ec18c993af4eec9a98e971f67d552, type: 3}
+--- !u!1 &7431113173223417555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 357ec18c993af4eec9a98e971f67d552, type: 3}
+  m_PrefabInstance: {fileID: 7773766968090827650}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7812424443627928681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 357ec18c993af4eec9a98e971f67d552, type: 3}

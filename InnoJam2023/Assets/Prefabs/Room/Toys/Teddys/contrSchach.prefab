@@ -42,8 +42,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2756556075763045767}
+  - component: {fileID: 6024953448365190385}
   m_Layer: 0
-  m_Name: Teddy1-controller-schach
+  m_Name: contrSchach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,6 +67,25 @@ Transform:
   - {fileID: 1050798951993415085}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6024953448365190385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810890566410878275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b1bdb4adb1647959e8cf215c8c38d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelBaby: {fileID: 8143586182733972683}
+  modelChildWasted: {fileID: 2220225503114383014}
+  modelChildNeutral: {fileID: 2220225503114383014}
+  modelChildNice: {fileID: 4676692367603163893}
+  modelTeenWasted: {fileID: 2220225503114383014}
+  modelTeenNeutral: {fileID: 2220225503114383014}
+  modelTeenNice: {fileID: 4676692367603163893}
 --- !u!1001 &1301182423126012919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -176,6 +196,11 @@ PrefabInstance:
 --- !u!4 &1550368537167860764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b252b87df2310421d899197a9153cdef, type: 3}
+  m_PrefabInstance: {fileID: 1301182423126012919}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2220225503114383014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b252b87df2310421d899197a9153cdef, type: 3}
   m_PrefabInstance: {fileID: 1301182423126012919}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5487525370066984868
@@ -537,6 +562,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9a80604cb054fd6b3ee73f13bdf583, type: 3}
+--- !u!1 &4676692367603163893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1f9a80604cb054fd6b3ee73f13bdf583, type: 3}
+  m_PrefabInstance: {fileID: 5487525370066984868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5453052392900933711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1f9a80604cb054fd6b3ee73f13bdf583, type: 3}
@@ -629,6 +659,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 357ec18c993af4eec9a98e971f67d552, type: 3}
+--- !u!1 &8143586182733972683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 357ec18c993af4eec9a98e971f67d552, type: 3}
+  m_PrefabInstance: {fileID: 9062013952957774234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8811297962502332017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 357ec18c993af4eec9a98e971f67d552, type: 3}

@@ -4,9 +4,7 @@ using UnityEngine;
 public class ItemUpdater : MonoBehaviour
 {
     [SerializeField] private GameObject
-        modelBabyWasted,
-        modelBabyNeutral,
-        modelBabyNice,
+        modelBaby,
         modelChildWasted,
         modelChildNeutral,
         modelChildNice,
@@ -21,9 +19,9 @@ public class ItemUpdater : MonoBehaviour
 
     private void Start()
     {
-        models[0, 0] = modelBabyWasted;
-        models[0, 1] = modelBabyNeutral;
-        models[0, 2] = modelBabyNice;
+        models[0, 0] = modelBaby;
+        models[0, 1] = modelBaby;
+        models[0, 2] = modelBaby;
 
         models[1, 0] = modelChildWasted;
         models[1, 1] = modelChildNeutral;

@@ -1056,8 +1056,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 411460531620872983}
+  - component: {fileID: 6940558849396452978}
   m_Layer: 0
-  m_Name: "Spielklo\u0308tze-stifte-kaugummi-zigaretten"
+  m_Name: StiKauZig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1081,6 +1082,25 @@ Transform:
   - {fileID: 6631232475784822209}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6940558849396452978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7902986461363701138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b1bdb4adb1647959e8cf215c8c38d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelBaby: {fileID: 8039292024284100469}
+  modelChildWasted: {fileID: 3658108098609647074}
+  modelChildNeutral: {fileID: 4320903506653810589}
+  modelChildNice: {fileID: 6172455156523941797}
+  modelTeenWasted: {fileID: 1964337714187939025}
+  modelTeenNeutral: {fileID: 4320903506653810589}
+  modelTeenNice: {fileID: 5847194253669363094}
 --- !u!1 &8039292024284100469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,6 +1541,11 @@ PrefabInstance:
 --- !u!4 &1155571408221468267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a95682074209d4d1990afeaa05701266, type: 3}
+  m_PrefabInstance: {fileID: 1694430361689133440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1964337714187939025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a95682074209d4d1990afeaa05701266, type: 3}
   m_PrefabInstance: {fileID: 1694430361689133440}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4396472895865616802
@@ -2125,6 +2150,11 @@ PrefabInstance:
       addedObject: {fileID: 7534976538585728300}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c1aa3f761b504765ba5264ed8efe6d2, type: 3}
+--- !u!1 &3658108098609647074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1c1aa3f761b504765ba5264ed8efe6d2, type: 3}
+  m_PrefabInstance: {fileID: 4469079629874245811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4147785860930852696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1c1aa3f761b504765ba5264ed8efe6d2, type: 3}
@@ -2744,6 +2774,11 @@ PrefabInstance:
       addedObject: {fileID: 1164919903945091299}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c6a00da0351f44ca994e274f3f9c972, type: 3}
+--- !u!1 &6172455156523941797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c6a00da0351f44ca994e274f3f9c972, type: 3}
+  m_PrefabInstance: {fileID: 6442855095602119412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6837352569381283103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3c6a00da0351f44ca994e274f3f9c972, type: 3}
