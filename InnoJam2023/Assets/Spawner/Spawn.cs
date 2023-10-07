@@ -15,8 +15,7 @@ public class Spawn : MonoBehaviour
     [SerializeField]
     private GameObject obj;
 
-    [SerializeField]
-    private GameObject spawn;
+    [SerializeField] private GameObject spawn;
 
     public SpawnerConfiguration spawnConfig;
 
@@ -58,8 +57,7 @@ public class Spawn : MonoBehaviour
                 {
                     Instantiate(wave.EnemyPrefab, spawn.transform.position, Quaternion.identity);
                     yield return new WaitForSeconds(wave.TimeBetweenEnemies);
-                }
-                Instantiate(wave.EndOfWaveMarker, spawn.transform.position, Quaternion.identity);
+                } 
                 
                 yield return new WaitForSeconds(wave.TimeBetweenWaves);
             }

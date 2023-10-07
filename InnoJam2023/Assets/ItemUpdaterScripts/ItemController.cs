@@ -33,7 +33,7 @@ public class ItemController : MonoBehaviour
 
     private void Awake()
     {
-        spawner.OnWaveChange += OnWaveChange;
+        // spawner.OnWaveChange += OnWaveChange;
     }
  
     void Start()
