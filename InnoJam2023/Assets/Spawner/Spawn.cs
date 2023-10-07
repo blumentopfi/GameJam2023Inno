@@ -53,7 +53,6 @@ public class Spawn : MonoBehaviour
                 {
                     continue;
                 }
-                
                 waveDisplay.text = $"{wave.WaveNumber}/{spawnConfig.Waves.Count()}";
                 for (int i = 0; i < wave.NumberOfEnemies; i++)
                 {

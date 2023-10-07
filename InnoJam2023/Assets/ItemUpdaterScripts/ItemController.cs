@@ -70,30 +70,30 @@ public class ItemController : MonoBehaviour
     public void UpdateItemController()
     {
         currentWaveCount++;
-        var charLevelsUp = wavesCharLevelsUp.Contains(currentWaveCount);
-          
-        if (charLevelsUp)
-        {
-          childItem.ChooseNextModel(currentTendency, true);
-        }
+        // var charLevelsUp = wavesCharLevelsUp.Contains(currentWaveCount);
+        //   
+        // if (charLevelsUp)
+        // {
+        //   childItem.ChooseNextModel(currentTendency, true);
+        // }
 
         foreach (var updateableItem in updateableItems)
         {
-            updateableItem.ChooseNextModel(currentTendency, charLevelsUp);
+            updateableItem.ChooseNextModel(currentTendency, true);
         }
     }
 
     private tendency CalculateCurrentTendency()
     {
         //TODO: Rework
-        var lifePerc = newLife/maxLife;
-        var wavePerc = currentWaveCount / maxWaveCount;
-        if (lifePerc > wavePerc)
+        var lifePerc = newLife/maxLife; 
+        
+        if (lifePerc > 0.7)
         {
             return tendency.wasted;
         } 
         
-        if (lifePerc == wavePerc)
+        if (lifePerc >= 0.5)
         {
             return tendency.neutral;
         }

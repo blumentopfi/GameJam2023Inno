@@ -18,7 +18,7 @@ MonoBehaviour:
     TimeBetweenEnemies: 0.5
     TimeBetweenWaves: 3
     EnemyPrefab: {fileID: 5402747114041907143, guid: 318c366397c7a4250bc23c8cb4b8dffa, type: 3}
-    EndOfWaveMarker: {fileID: 0}
+    EndOfWaveMarker: {fileID: 5402747114041907143, guid: 977eca4facc124d3793c5d336af42367, type: 3}
   - WaveNumber: 2
     NumberOfEnemies: 3
     TimeBetweenEnemies: 0.5
@@ -51,7 +51,7 @@ MonoBehaviour:
     EndOfWaveMarker: {fileID: 5402747114041907143, guid: 977eca4facc124d3793c5d336af42367, type: 3}
   - WaveNumber: 7
     NumberOfEnemies: 10
-    TimeBetweenEnemies: 5
+    TimeBetweenEnemies: 0.5
     TimeBetweenWaves: 3
     EnemyPrefab: {fileID: 5402747114041907143, guid: 318c366397c7a4250bc23c8cb4b8dffa, type: 3}
     EndOfWaveMarker: {fileID: 5402747114041907143, guid: 977eca4facc124d3793c5d336af42367, type: 3}

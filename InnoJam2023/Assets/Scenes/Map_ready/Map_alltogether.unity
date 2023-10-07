@@ -4975,7 +4975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavesCharLevelsUp: 0400000008000000
-  wavesRoomUpdates: 0400000005000000060000000700000008000000090000000a000000
+  wavesRoomUpdates: 0400000008000000
   demoRun: 0
   goToLevel: 3
   demoTendency: 2
