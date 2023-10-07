@@ -17,24 +17,20 @@ MonoBehaviour:
   - Level: 1
     Range: 10
     StatComponents:
-    - {fileID: 11400000, guid: 0cfc8563ddb894cc0afbd3b255adfe37, type: 2}
-    - {fileID: 11400000, guid: a27a93053c3154450b49f13791bf5021, type: 2}
-    - {fileID: 11400000, guid: 779ea0c737d66496f839676a9dfa4f8d, type: 2}
+    - {fileID: 11400000, guid: e1755d8b8f11a49769ef0dc8528c634a, type: 2}
+    - {fileID: 11400000, guid: 8749902f5ea54422c83b99a2dd00f965, type: 2}
   - Level: 2
     Range: 20
     StatComponents:
-    - {fileID: 11400000, guid: a27a93053c3154450b49f13791bf5021, type: 2}
-    - {fileID: 11400000, guid: 0cfc8563ddb894cc0afbd3b255adfe37, type: 2}
-    - {fileID: 11400000, guid: 779ea0c737d66496f839676a9dfa4f8d, type: 2}
+    - {fileID: 11400000, guid: 8749902f5ea54422c83b99a2dd00f965, type: 2}
+    - {fileID: 11400000, guid: e1755d8b8f11a49769ef0dc8528c634a, type: 2}
   - Level: 3
     Range: 30
     StatComponents:
-    - {fileID: 11400000, guid: 0cfc8563ddb894cc0afbd3b255adfe37, type: 2}
-    - {fileID: 11400000, guid: a27a93053c3154450b49f13791bf5021, type: 2}
-    - {fileID: 11400000, guid: 779ea0c737d66496f839676a9dfa4f8d, type: 2}
+    - {fileID: 11400000, guid: e1755d8b8f11a49769ef0dc8528c634a, type: 2}
+    - {fileID: 11400000, guid: 8749902f5ea54422c83b99a2dd00f965, type: 2}
   - Level: 4
     Range: 40
     StatComponents:
-    - {fileID: 11400000, guid: 0cfc8563ddb894cc0afbd3b255adfe37, type: 2}
-    - {fileID: 11400000, guid: a27a93053c3154450b49f13791bf5021, type: 2}
-    - {fileID: 11400000, guid: 779ea0c737d66496f839676a9dfa4f8d, type: 2}
+    - {fileID: 11400000, guid: e1755d8b8f11a49769ef0dc8528c634a, type: 2}
+    - {fileID: 11400000, guid: 8749902f5ea54422c83b99a2dd00f965, type: 2}

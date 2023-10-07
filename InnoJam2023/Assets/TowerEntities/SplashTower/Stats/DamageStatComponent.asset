@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f497153ca54d419895400270e82431, type: 3}
   m_Name: DamageStatComponent
   m_EditorClassIdentifier: 
-  Damage: 100
+  Damage: 500
   FireRate: 2

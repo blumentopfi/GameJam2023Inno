@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db24e56acf3474793ff07f7dd9a731a, type: 3}
+  m_Name: SpawnerConfiguration
+  m_EditorClassIdentifier: 
+  Waves:
+  - WaveNumber: 1
+    NumberOfEnemies: 1
+    TimeBetweenEnemies: 0.5
+    TimeBetweenWaves: 3
+    EnemyPrefab: {fileID: 5402747114041907143, guid: 318c366397c7a4250bc23c8cb4b8dffa, type: 3}
+  - WaveNumber: 2
+    NumberOfEnemies: 3
+    TimeBetweenEnemies: 0.5
+    TimeBetweenWaves: 3
+    EnemyPrefab: {fileID: 5402747114041907143, guid: 318c366397c7a4250bc23c8cb4b8dffa, type: 3}
+  - WaveNumber: 3
+    NumberOfEnemies: 6
+    TimeBetweenEnemies: 0.5
+    TimeBetweenWaves: 3
+    EnemyPrefab: {fileID: 5402747114041907143, guid: 318c366397c7a4250bc23c8cb4b8dffa, type: 3}
+  - WaveNumber: 4
+    NumberOfEnemies: 10
+    TimeBetweenEnemies: 0.5
+    TimeBetweenWaves: 3
+    EnemyPrefab: {fileID: 5402747114041907143, guid: 318c366397c7a4250bc23c8cb4b8dffa, type: 3}
