@@ -7,6 +7,7 @@ public class EnemyStats : MonoBehaviour
     public float baseSpeed;
     public float baseHealth;
     public float baseDamage;
+    public float baseReward;
 
     public float BaseSpeed
     {
@@ -24,5 +25,11 @@ public class EnemyStats : MonoBehaviour
     {
         get => baseDamage;
         set => baseDamage = value;
+    }
+
+    public float BaseReward
+    {
+        get => baseReward;
+        set => baseReward = value;
     }
 }

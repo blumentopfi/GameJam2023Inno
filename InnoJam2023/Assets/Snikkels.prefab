@@ -237,8 +237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd324512d1325405fbd0ccc2fcb86fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyStats: {fileID: -1608941562250352017}
+  enemystats: {fileID: -1608941562250352017}
   healthBar: {fileID: 1792598452567388874}
+  drugmanager: {fileID: 0}
 --- !u!114 &-1608941562250352017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,8 +253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 10
-  baseHealth: 500
+  baseHealth: 200
   baseDamage: 50
+  baseReward: 50
 --- !u!1 &5598655179761049314
 GameObject:
   m_ObjectHideFlags: 0

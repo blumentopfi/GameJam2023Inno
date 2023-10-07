@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DamageStatComponent
   m_EditorClassIdentifier: 
   Damage: 100
-  FireRate: 0.1
+  FireRate: 2

@@ -7,8 +7,9 @@ public class EnemyHealth : MonoBehaviour
 {
 
 
-    public EnemyStats EnemyStats;
+    public EnemyStats enemystats;
     public RectTransform healthBar;
+    public DrugManager drugmanager;
     private float health;
     private float maxSize;
     private float maxHealth;
@@ -17,8 +18,9 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         maxSize = healthBar.GetComponent<RectTransform>().rect.width;
-        health = EnemyStats.baseHealth;
-        maxHealth = EnemyStats.baseHealth;
+        drugmanager = GameObject.FindObjectOfType<DrugManager>();
+        health = enemystats.baseHealth;
+        maxHealth = enemystats.baseHealth;
     }
 
     // Update is called once per frame
@@ -31,10 +33,10 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= damage;
         healthBar.sizeDelta = new Vector2(health / maxHealth * maxSize, healthBar.sizeDelta.y);
-        // healthBar.GetComponent<Image>().fillAmount = health / maxHealth;
 
         if (health <= 0)
         {
+            drugmanager.increaseDrugs(enemystats.baseReward);
             Destroy(gameObject);
         }
     }
