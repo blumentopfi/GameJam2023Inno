@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 561918110992811373}
   - component: {fileID: 1029610422564986795}
   - component: {fileID: 217297504585510221}
+  - component: {fileID: 7253682565435175185}
+  - component: {fileID: -1608941562250352017}
   m_Layer: 0
   m_Name: Snikkels
   m_TagString: Untagged
@@ -145,3 +147,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1029610422564986795}
   speed: 5
+--- !u!114 &7253682565435175185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402747114041907143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd324512d1325405fbd0ccc2fcb86fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyStats: {fileID: -1608941562250352017}
+--- !u!114 &-1608941562250352017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402747114041907143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb632ef38b7524b17b8b31c004203949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSpeed: 5
+  baseHealth: 5
+  baseDamage: 5
