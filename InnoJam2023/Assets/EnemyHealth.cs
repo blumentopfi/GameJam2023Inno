@@ -23,11 +23,11 @@ public class EnemyHealth : MonoBehaviour
     void TakeDamage(float damage)
     {
 
-        if (EnemyStats.BaseHealth - damage <= 0)
+        if (EnemyStats.baseHealth - damage <= 0)
         {
             Destroy(gameObject);
         }
 
-        EnemyStats.BaseHealth -= damage;
+        EnemyStats.baseHealth -= damage;
     }
 }

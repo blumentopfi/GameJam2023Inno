@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public float baseSpeed;
-    public float BaseHealth;
+    public float baseHealth;
     public float baseDamage;
 
     public float BaseSpeed
@@ -16,8 +16,8 @@ public class EnemyStats : MonoBehaviour
 
     public float BaseHealth1
     {
-        get => BaseHealth;
-        set => BaseHealth = value;
+        get => baseHealth;
+        set => baseHealth = value;
     }
 
     public float BaseDamage
