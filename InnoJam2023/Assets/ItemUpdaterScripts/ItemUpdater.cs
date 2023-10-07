@@ -44,7 +44,7 @@ public class ItemUpdater : MonoBehaviour
 
     public void ChooseNextModel(ItemController.tendency tendency, bool levelsUp)
     {
-        if (levelsUp)
+        if (levelsUp && currentlyChosen[0] < 2)
         {
             newChosen[0] = currentlyChosen[0] + 1;
         }
@@ -54,7 +54,7 @@ public class ItemUpdater : MonoBehaviour
             newChosen[1] = currentlyChosen[1];
         }
 
-        if (tendency == ItemController.tendency.nice && currentlyChosen[1] <= 2)
+        if (tendency == ItemController.tendency.nice && currentlyChosen[1] < 2)
         {
             newChosen[1] = currentlyChosen[1] + 1;
         }
@@ -77,7 +77,8 @@ public class ItemUpdater : MonoBehaviour
                 models[i, j].gameObject.SetActive(false); 
             } 
         }
-        models[newChosen[0],newChosen[1]].gameObject.SetActive(true);
+        models[newChosen[0],newChosen[1]].gameObject.SetActive(true); 
         currentlyChosen = newChosen;
+        
     }
 }

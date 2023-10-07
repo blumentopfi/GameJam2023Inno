@@ -18,5 +18,6 @@ namespace Spawner
         public float TimeBetweenEnemies;
         public float TimeBetweenWaves;
         [FormerlySerializedAs("EnemyPrefabs")] public GameObject EnemyPrefab;
+        [FormerlySerializedAs("EndOfWaveMarker")] public GameObject EndOfWaveMarker;
     }
 }

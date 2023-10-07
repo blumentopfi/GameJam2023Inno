@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using Spawner;
 using UnityEngine;
 
 public class ItemController : MonoBehaviour
@@ -11,11 +13,15 @@ public class ItemController : MonoBehaviour
     }
 
     public int[] wavesCharLevelsUp;
-    public int[] wavesNothingHappens;
+    public int[] wavesRoomUpdates;
 
     private int currentWaveCount = 1;
+    private int maxWaveCount = 15;
     private tendency currentTendency = tendency.neutral;
 
+    private int maxLife = 100, newLife;
+    private BabyHealth health;
+    
     private ItemUpdater[] updateableItems;
     private ItemUpdaterChild childItem;
 
@@ -23,15 +29,25 @@ public class ItemController : MonoBehaviour
     [SerializeField] private int goToLevel = 0;
     [SerializeField] private tendency demoTendency = tendency.wasted;
 
+    [SerializeField] private Spawn spawner;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        spawner.OnWaveChange += OnWaveChange;
+    }
+ 
     void Start()
     {
-        updateableItems = GameObject.FindObjectsByType<ItemUpdater>(FindObjectsSortMode.None);
+        health = FindObjectOfType<BabyHealth>(); 
+
+        maxWaveCount = spawner.spawnConfig.Waves.Count;
+
+        childItem = FindObjectOfType<ItemUpdaterChild>();
+        updateableItems = FindObjectsByType<ItemUpdater>(FindObjectsSortMode.None);
 
         if (demoRun)
         {
-            for (int i = goToLevel-1; i > 0; i--)
+            for (int i = goToLevel - 1; i > 0; i--)
             {
                 foreach (var updateableItem in updateableItems)
                 {
@@ -41,24 +57,24 @@ public class ItemController : MonoBehaviour
         }
     }
 
-    public void UpdateItemController(int maxPointsOfWave, int actualPointsOfWave)
+    private void OnWaveChange(object sender, int e)
+    {
+        if (wavesRoomUpdates.Contains(e))
+        {
+            newLife = health.GetBabyHealth();
+            currentTendency = CalculateCurrentTendency();
+            UpdateItemController(); 
+        }
+    }
+
+    public void UpdateItemController()
     {
         currentWaveCount++;
         var charLevelsUp = wavesCharLevelsUp.Contains(currentWaveCount);
-        if (wavesNothingHappens.Contains(currentWaveCount))
-        {
-            return;
-        }
-
-        currentTendency = CalculateCurrentTendency(maxPointsOfWave, actualPointsOfWave);
-        if (currentTendency == tendency.neutral && !wavesCharLevelsUp.Contains(currentWaveCount))
-        {
-            return;
-        }
-
+          
         if (charLevelsUp)
         {
-            childItem.ChooseNextModel(currentTendency, true);
+          childItem.ChooseNextModel(currentTendency, true);
         }
 
         foreach (var updateableItem in updateableItems)
@@ -67,15 +83,17 @@ public class ItemController : MonoBehaviour
         }
     }
 
-    private tendency CalculateCurrentTendency(int maxPoints, int actualPoints)
+    private tendency CalculateCurrentTendency()
     {
-        var percentage = actualPoints / maxPoints;
-        if (percentage >= 0.67)
+        //TODO: Rework
+        var lifePerc = newLife/maxLife;
+        var wavePerc = currentWaveCount / maxWaveCount;
+        if (lifePerc > wavePerc)
         {
             return tendency.wasted;
-        }
-
-        if (percentage < 0.67 && percentage >= 0.34)
+        } 
+        
+        if (lifePerc == wavePerc)
         {
             return tendency.neutral;
         }

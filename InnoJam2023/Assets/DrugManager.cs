@@ -11,12 +11,7 @@ public class DrugManager : MonoBehaviour
     private float drugs = 200;
 
     public TMP_Text drugDisplay;
-
-    private void Start()
-    {
-        
-    }
-
+ 
     private void Update()
     {
         string[] temp = drugDisplay.text.Split('$');

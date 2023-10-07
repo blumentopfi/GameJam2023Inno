@@ -89,10 +89,9 @@ GameObject:
   - component: {fileID: 8651422035037329563}
   - component: {fileID: 561918110992811373}
   - component: {fileID: 217297504585510221}
-  - component: {fileID: 7253682565435175185}
   - component: {fileID: -1608941562250352017}
   m_Layer: 6
-  m_Name: Snikkels
+  m_Name: EndOfWaveMarker
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e870bf81e601643fd8413ada9bf8eeda, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -201,21 +200,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   enemystats: {fileID: -1608941562250352017}
---- !u!114 &7253682565435175185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5402747114041907143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd324512d1325405fbd0ccc2fcb86fa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemystats: {fileID: -1608941562250352017}
-  healthBar: {fileID: 1792598452567388874}
-  drugmanager: {fileID: 0}
 --- !u!114 &-1608941562250352017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,8 +214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 8
   baseHealth: 200
-  baseDamage: 20
-  baseReward: 10
+  baseDamage: 0
+  baseReward: 0
 --- !u!1 &5598655179761049314
 GameObject:
   m_ObjectHideFlags: 0

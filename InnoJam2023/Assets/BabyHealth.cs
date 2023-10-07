@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BabyHealth : MonoBehaviour
@@ -7,27 +9,21 @@ public class BabyHealth : MonoBehaviour
 
     [SerializeField]
     private float health;
+
+    [SerializeField] private TMP_Text traumaDisplay;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
-    {
-
+    { 
+        traumaDisplay.text = $"Trauma:{health}%";
     }
 
     public void TakeDamage( float damage)
     {
-        health -= damage;
+        health -= damage; 
+    }
 
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
-
+    public int GetBabyHealth()
+    {
+        return Mathf.FloorToInt(health);
     }
 }
