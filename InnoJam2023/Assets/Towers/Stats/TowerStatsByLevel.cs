@@ -13,6 +13,8 @@ namespace Towers
         [SerializeField]
         public List<TowerStats> _towerStats;
 
+        public int MaxLevel => _towerStats.Count;
+
         public TowerStats GetStatsForLevel(int level)
         {
             return _towerStats
