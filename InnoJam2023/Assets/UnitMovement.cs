@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class UnitMovement : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class UnitMovement : MonoBehaviour
     void Start()
     {
         waypoints = FindObjectOfType<Waypoints>().waypoints;
+        GetComponent<MeshRenderer>().material.color = Random
+            .ColorHSV(hueMax:0, hueMin:1, saturationMax:1, saturationMin:1, valueMax:1, valueMin:1, alphaMin:1, alphaMax:1);
     }
 
     // Update is called once per frame
