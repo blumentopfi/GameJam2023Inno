@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1029610422564986795}
   speed: 5
+  enemystats: {fileID: -1608941562250352017}
 --- !u!114 &7253682565435175185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb632ef38b7524b17b8b31c004203949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 5
-  baseHealth: 5
-  baseDamage: 5
+  baseSpeed: 0
+  BaseHealth: 0
+  baseDamage: 50
