@@ -21,6 +21,11 @@ public class DrugManager : MonoBehaviour
         string[] temp = drugDisplay.text.Split('$');
         drugDisplay.text = temp[0] + '$' + drugs;
     }
+    
+    public void decreaseDrugs(float price)
+    {
+        drugs -= price;
+    }
 
     public void increaseDrugs(float reward)
     {
@@ -30,12 +35,10 @@ public class DrugManager : MonoBehaviour
     public bool canBuild(float cost)
     {
         
-        if (drugs - cost <= 0)
+        if (drugs - cost < 0)
         {
             return false;
         }
-
-        drugs -= cost;
         return true;
     }
 }

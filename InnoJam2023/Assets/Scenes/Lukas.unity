@@ -589,9 +589,9 @@ PrefabInstance:
       value: Snikkels
       objectReference: {fileID: 0}
     - target: {fileID: 7253682565435175185, guid: 318c366397c7a4250bc23c8cb4b8dffa, type: 3}
-      propertyPath: drugManager
+      propertyPath: drugmanager
       value: 
-      objectReference: {fileID: 1995426183}
+      objectReference: {fileID: 0}
     - target: {fileID: 8390810149646529267, guid: 318c366397c7a4250bc23c8cb4b8dffa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.0654387
@@ -941,6 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37ecd4fd5b7f4186a497eeab4ee48a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drugDisplay: {fileID: 1995426184}
 --- !u!114 &1995426184
 MonoBehaviour:
   m_ObjectHideFlags: 0

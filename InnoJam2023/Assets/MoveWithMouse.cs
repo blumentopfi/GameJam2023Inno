@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Towers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoveWithMouse : MonoBehaviour
@@ -11,12 +12,20 @@ public class MoveWithMouse : MonoBehaviour
 
     private Color currentColor = Color.blue;
 
-    public void SetTowerPrefab(GameObject TowerPrefab)
+    private float currentPrice;
+
+    private DrugManager drugManager;
+    
+    
+
+    public void SetTowerPrefab(GameObject TowerPrefab, float price)
     {
         this.TowerPrefab = TowerPrefab;
         this.TowerPrefab.transform.parent = gameObject.transform;
         this.TowerPrefab.transform.position = gameObject.transform.position;
         this.TowerPrefab.gameObject.layer = 2;
+        currentPrice = price;
+        drugManager = FindObjectOfType<DrugManager>();
     }
     
     // Update is called once per frame
@@ -55,11 +64,22 @@ public class MoveWithMouse : MonoBehaviour
             }
         }
 
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cancel();
+            return;
+        }
+        
         if (Input.GetMouseButtonDown(0))
         {
+            drugManager.decreaseDrugs(currentPrice);
             ConstructBuilding();
         }
+    }
+
+    private void Cancel()
+    {
+        Destroy(TowerPrefab);
     }
 
     private void ConstructBuilding()

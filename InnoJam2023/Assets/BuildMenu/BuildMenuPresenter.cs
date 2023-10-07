@@ -7,6 +7,8 @@ public class BuildMenuPresenter : MonoBehaviour
 {
     private List<BuildMenuTowerButtonView> BuildMenuTowerButtonViews;
 
+    private DrugManager drugManager;
+
     [SerializeField] private BuildMenuConfiguration _buildMenuConfiguration;
 
     [SerializeField] private BuildMenuTowerButtonView viewInstance;
@@ -16,6 +18,7 @@ public class BuildMenuPresenter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        drugManager = FindObjectOfType<DrugManager>();
         viewInstance.gameObject.SetActive(false);
         _buildMenuConfiguration.BuildMenuConfigurationData.ForEach((data) =>
         {
@@ -27,8 +30,12 @@ public class BuildMenuPresenter : MonoBehaviour
 
     private void onBuildClicked(GameObject dataTowerPrefab, int dataPrice)
     {
+        if (!drugManager.canBuild(dataPrice))
+        {
+            return;
+        }
         var gameObject = Instantiate(dataTowerPrefab, new Vector3(0,0,0), Quaternion.identity);
         
-        builder.SetTowerPrefab(gameObject);
+        builder.SetTowerPrefab(gameObject, dataPrice);
     }
 }

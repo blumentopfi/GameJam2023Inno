@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         maxSize = healthBar.GetComponent<RectTransform>().rect.width;
-        drugmanager = GameObject.FindObjectOfType<DrugManager>();
+        drugmanager = FindObjectOfType<DrugManager>();
         health = enemystats.baseHealth;
         maxHealth = enemystats.baseHealth;
     }
