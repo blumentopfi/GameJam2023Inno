@@ -70,7 +70,7 @@ public class MoveWithMouse : MonoBehaviour
             return;
         }
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && TowerPrefab != null)
         {
             drugManager.decreaseDrugs(currentPrice);
             ConstructBuilding();
@@ -95,6 +95,7 @@ public class MoveWithMouse : MonoBehaviour
         TowerPrefab.gameObject.layer = 0;
         
         TowerPrefab.GetComponent<TowerManager>().Construct(1);
+        TowerPrefab = null;
     }
 
     private void SetAllSubMaterialsColor(Color color)
