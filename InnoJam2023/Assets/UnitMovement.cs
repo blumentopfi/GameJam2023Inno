@@ -22,7 +22,7 @@ public class UnitMovement : MonoBehaviour
     {
         goal = GameObject.FindGameObjectWithTag("Goal").transform;
         
-        agent.speed = speed;
+        agent.speed = enemystats.baseSpeed;
         agent.SetDestination(goal.position);
     }
 
