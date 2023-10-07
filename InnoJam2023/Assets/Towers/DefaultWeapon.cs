@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Towers.WeaponModifier;
@@ -14,14 +15,28 @@ namespace Towers
             var initialTargets = new List<GameObject> { target };
             var finalTargets = GetModifier<TargetWeaponModifier>()
                 .Aggregate(initialTargets,
-                    (targets, modifier) => modifier.GetModifiedTargets(targets, statsByLevel));
+                    (targets, modifier) =>
+                    {
+                        StartCoroutine(VisualizeAttack(targets, modifier));
+                        return modifier.GetModifiedTargets(targets, statsByLevel);
+                    });
             
 
             var buffModifier = GetModifier<BuffWeaponModifier>();
             finalTargets.ForEach(t =>
             {
-                buffModifier.ForEach(bm => bm.ApplyBuff(t, statsByLevel));
+                buffModifier.ForEach(bm =>
+                {
+                    StartCoroutine(VisualizeAttack(new List<GameObject> {t}, bm));
+                    bm.ApplyBuff(t, statsByLevel);
+                });
             });
+
+        }
+        
+        private IEnumerator VisualizeAttack(List<GameObject> targets, WeaponModifier.WeaponModifier modifier)
+        {
+            yield return modifier.Visualize(targets);
         }
     }
 
