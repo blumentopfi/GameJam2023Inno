@@ -1,20 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Spawner
 {
     public class WaveByWaveSpawner : MonoBehaviour
     {
+        private EventHandler<WaveFinishedEventArgs> waveFinishedHandler;
+        
         public SpawnerConfiguration spawnConfig;
 
         private List<GameObject> spawnedEnemies;
 
         private int waveIndex = 0;
+        private int enemiesReachedGoal = 0;
+        private int enemyKillCount = 0;
 
         [SerializeField] private GameObject spawn;
 
+        public event EventHandler<WaveFinishedEventArgs> OnWaveFinished
+        {
+            add => waveFinishedHandler += value;
+            remove => waveFinishedHandler -= value;
+        } 
+        
         private void Awake()
         {
             spawnedEnemies = new();
@@ -32,27 +44,50 @@ namespace Spawner
                 yield break;
             }
             
+            enemiesReachedGoal -= enemiesReachedGoal;
+            enemyKillCount = 0;
+            
             var wave = spawnConfig.Waves[waveIndex];
             for (int i = 0; i < wave.NumberOfEnemies; i++)
             {
                 var obj = Instantiate(wave.EnemyPrefab, spawn.transform.position, Quaternion.identity);
                 spawnedEnemies.Add(obj);
-                obj.GetComponent<EnemyHealth>().OnDeath += OnEnemyDestroy;
-                obj.GetComponent<UnitMovement>().OnReachedGoal += OnEnemyDestroy;
+                obj.GetComponent<EnemyHealth>().OnDeath += OnEnemyDeath; 
+                obj.GetComponent<UnitMovement>().OnReachedGoal += OnEnemyReachedGoal; 
+                
                 yield return new WaitForSeconds(wave.TimeBetweenEnemies);
             }
 
             waveIndex++;
         }
 
-        private void OnEnemyDestroy(object sender, EventArgs e)
+        private void OnEnemyReachedGoal(object sender, EventArgs e)
         {
-            var enemy = sender as GameObject;
+            enemiesReachedGoal++;
+            RemoveEnemyFromList(sender as GameObject);
+        }
+
+        private void OnEnemyDeath(object sender, EventArgs e)
+        {
+            enemyKillCount++;
+            RemoveEnemyFromList(sender as GameObject);
+        } 
+        private void RemoveEnemyFromList(GameObject enemy)
+        {
             if (spawnedEnemies.Contains(enemy))
             {
-                spawnedEnemies.Remove(sender as GameObject);
+                spawnedEnemies.Remove(enemy);
                 if (spawnedEnemies.Count == 0)
                 {
+                    var waveSize = spawnConfig.Waves[waveIndex].NumberOfEnemies;
+                    waveFinishedHandler?.Invoke(
+                        this, 
+                        new WaveFinishedEventArgs(
+                            waveSize, 
+                            enemyKillCount, 
+                            enemiesReachedGoal
+                        )
+                    );
                     StartCoroutine(SpawnNextWave());
                 }
             }
