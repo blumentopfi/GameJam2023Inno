@@ -3,39 +3,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class UnitMovement : MonoBehaviour
 {
     [SerializeField]
-    private NavMeshAgent agent;
-    
-    [SerializeField]
     private float speed;
 
-    private double tolerance = 0.5;
-    private Transform goal;
-
+    private double tolerance = 0.6;
     public EnemyStats enemystats;
+    private int currentWaypoint;
+    private List<Transform> waypoints;
 
     // Start is called before the first frame update
     void Start()
     {
-        goal = GameObject.FindGameObjectWithTag("Goal").transform;
-        
-        agent.speed = enemystats.baseSpeed;
-        agent.SetDestination(goal.position);
+        waypoints = FindObjectOfType<Waypoints>().waypoints;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if ((Math.Abs(agent.transform.position.x - goal.position.x) < tolerance) &&
-            (Math.Abs(agent.transform.position.z - goal.position.z) < tolerance))
+        if (Vector3.Distance(transform.position, waypoints[currentWaypoint].position) < tolerance)
         {
-            var babyHealth = goal.gameObject.GetComponent<BabyHealth>();
-            babyHealth.TakeDamage(enemystats.baseDamage);
-            Destroy(gameObject);
+            currentWaypoint++;
+            if (currentWaypoint >= waypoints.Count)
+            {
+                var babyHealth = FindObjectOfType<BabyHealth>();
+                if (babyHealth != null)
+                {
+                    babyHealth.TakeDamage(enemystats.baseDamage);
+                }
+
+                Destroy(gameObject);
+                return;
+            }
         }
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, speed * Time.deltaTime);
     }
 }

@@ -14,7 +14,7 @@ public class Spawn : MonoBehaviour
 
     private float lastSpawned;
 
-    private float spawnInterval = 2f;
+    private float spawnInterval = 0.1f;
     void Start()
     {
         Instantiate(obj, spawn.transform.position, Quaternion.identity);
