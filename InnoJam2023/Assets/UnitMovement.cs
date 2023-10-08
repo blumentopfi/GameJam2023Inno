@@ -40,7 +40,7 @@ public class UnitMovement : MonoBehaviour
     public void DecreaseSpeed(float value)
     {
         float minSpeed = 0.1f;
-        speed *= Mathf.Min(minSpeed, value);
+        speed = Mathf.Min(minSpeed, speed * value);
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class UnitMovement : MonoBehaviour
         {
             if (currentWaypoint >= waypoints.Count-1)
             { 
-                    var babyHealth = FindObjectOfType<BabyHealth>();
+                var babyHealth = FindObjectOfType<BabyHealth>();
                 if (babyHealth != null)
                 {
                     babyHealth.TakeDamage(enemystats.baseDamage);
