@@ -17,10 +17,6 @@ MonoBehaviour:
     Name: Beer
     Icon: {fileID: 21300000, guid: 482d54163447d4c35a98c785f93d9cb2, type: 3}
     Price: 100
-  - TowerPrefab: {fileID: 2907803663348834122, guid: 3120e6172693046e5ae707efa893e05d, type: 3}
-    Name: Drugs
-    Icon: {fileID: 21300000, guid: 20673e076fbe442bca4e48af16715dd8, type: 3}
-    Price: 150
   - TowerPrefab: {fileID: 2907803663348834122, guid: 26baaa24aedb243f5a47117e324449d4, type: 3}
     Name: Smoker
     Icon: {fileID: 21300000, guid: c2483670790794ebea869682f2efd096, type: 3}
