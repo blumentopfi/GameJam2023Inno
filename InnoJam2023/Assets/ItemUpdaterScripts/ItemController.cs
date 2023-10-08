@@ -36,6 +36,8 @@ public class ItemController : MonoBehaviour
 
     [SerializeField] private Light light;
 
+    private int waveCounter = 0;
+
     private void Awake()
     {
         spawner.OnWaveFinished += OnWaveFinished;
@@ -57,8 +59,8 @@ public class ItemController : MonoBehaviour
 
     private void OnWaveFinished(object sender, WaveFinishedEventArgs args)
     { 
-        if (wavesAgeUp.Contains(args.WaveIndex))
-        {
+        if (wavesAgeUp.Contains(waveCounter))
+        { 
             UpdateAge();
         }
 
@@ -67,9 +69,11 @@ public class ItemController : MonoBehaviour
             args.EnemyKillCount,
             args.EnemyReachedGoalCount
         );
+
+        waveCounter++;
     }
 
-    public void UpdateAge()
+    private void UpdateAge()
     {
         foreach (var updateableItem in updateableItems)
         {
