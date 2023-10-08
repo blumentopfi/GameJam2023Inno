@@ -3,39 +3,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class UnitMovement : MonoBehaviour
 {
-    [SerializeField]
-    private NavMeshAgent agent;
+    private EventHandler goalReachedHandler;
     
-    [SerializeField]
-    private float speed;
+    [SerializeField] private float speed;
 
-    private double tolerance = 0.5;
-    private Transform goal;
-
+    private double tolerance = 0.6;
     public EnemyStats enemystats;
+    private int currentWaypoint;
+    private List<Transform> waypoints;
 
-    // Start is called before the first frame update
+    public event EventHandler OnReachedGoal
+    {
+        add => goalReachedHandler += value;
+        remove => goalReachedHandler -= value;
+    }
+    
     void Start()
     {
-        goal = GameObject.FindGameObjectWithTag("Goal").transform;
-        
-        agent.speed = enemystats.baseSpeed;
-        agent.SetDestination(goal.position);
+        waypoints = FindObjectOfType<Waypoints>().waypoints;
+
+        GetComponent<MeshRenderer>().material.color = Random
+            .ColorHSV(hueMax: 0, hueMin: 1, saturationMax: 1, saturationMin: 1, valueMax: 1, valueMin: 1, alphaMin: 1,
+                alphaMax: 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if ((Math.Abs(agent.transform.position.x - goal.position.x) < tolerance) &&
-            (Math.Abs(agent.transform.position.z - goal.position.z) < tolerance))
+        if (Vector3.Distance(transform.position, waypoints[currentWaypoint].position) < tolerance)
         {
-            var babyHealth = goal.gameObject.GetComponent<BabyHealth>();
-            babyHealth.TakeDamage(enemystats.baseDamage);
-            Destroy(gameObject);
+            if (currentWaypoint >= waypoints.Count-1)
+            { 
+                    var babyHealth = FindObjectOfType<BabyHealth>();
+                if (babyHealth != null)
+                {
+                    babyHealth.TakeDamage(enemystats.baseDamage);
+                }
+
+                goalReachedHandler?.Invoke(gameObject, EventArgs.Empty);
+                Destroy(gameObject);
+                return;
+            }
+            currentWaypoint++;
         }
+
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position,
+            speed * Time.deltaTime);
     }
 }

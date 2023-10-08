@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-
+    private EventHandler deathHandler;
 
     public EnemyStats enemystats;
     public RectTransform healthBar;
@@ -13,8 +11,13 @@ public class EnemyHealth : MonoBehaviour
     private float health;
     private float maxSize;
     private float maxHealth;
-    
-    // Start is called before the first frame update
+
+    public event EventHandler OnDeath
+    {
+        add => deathHandler += value;
+        remove => deathHandler -= value;
+    }
+
     void Start()
     {
         maxSize = healthBar.GetComponent<RectTransform>().rect.width;
@@ -23,20 +26,20 @@ public class EnemyHealth : MonoBehaviour
         maxHealth = enemystats.baseHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TakeDamage(float damage)
     {
+        if (health <= 0)
+        {
+            return;
+        }
+        
         health -= damage;
         healthBar.sizeDelta = new Vector2(health / maxHealth * maxSize, healthBar.sizeDelta.y);
 
         if (health <= 0)
         {
             drugmanager.increaseDrugs(enemystats.baseReward);
+            deathHandler?.Invoke(gameObject, EventArgs.Empty);
             Destroy(gameObject);
         }
     }

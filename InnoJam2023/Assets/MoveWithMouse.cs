@@ -26,6 +26,7 @@ public class MoveWithMouse : MonoBehaviour
         this.TowerPrefab.gameObject.layer = 2;
         currentPrice = price;
         drugManager = FindObjectOfType<DrugManager>();
+        TowerPrefab.GetComponent<TowerManager>().enabled = true;
     }
     
     // Update is called once per frame
@@ -72,7 +73,6 @@ public class MoveWithMouse : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && TowerPrefab != null)
         {
-            drugManager.decreaseDrugs(currentPrice);
             ConstructBuilding();
         }
     }
@@ -89,12 +89,16 @@ public class MoveWithMouse : MonoBehaviour
             return;
         }
         
+        drugManager.decreaseDrugs(currentPrice);
+
         SetAllSubMaterialsColor(Color.white);
         
         TowerPrefab.transform.parent = null;
         TowerPrefab.gameObject.layer = 0;
-        
+
         TowerPrefab.GetComponent<TowerManager>().Construct(1);
+        TowerPrefab.GetComponent<TowerManager>().enabled = true;
+
         TowerPrefab = null;
     }
 

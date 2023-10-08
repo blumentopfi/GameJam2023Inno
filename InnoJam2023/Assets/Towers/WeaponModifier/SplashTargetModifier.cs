@@ -7,6 +7,7 @@ namespace Towers.WeaponModifier
     [CreateAssetMenu(fileName = "SplashTargetModifier", menuName = "ScriptableObjects/SplashTargetModifier")]
     public class SplashTargetModifier : TargetWeaponModifier
     {
+        public GameObject splashEffect;
         public override List<GameObject> GetModifiedTargets(List<GameObject> targets, TowerStats statsByLevel)
         {
             var splashRadius = statsByLevel.GetStatComponent<SplashStatComponent>().SplashRange;
@@ -27,7 +28,19 @@ namespace Towers.WeaponModifier
 
         public override IEnumerator Visualize(List<GameObject> targets)
         {
-            throw new System.NotImplementedException();
+            var effects = new List<GameObject>();
+            foreach (var target in targets)
+            {
+                var effect = Instantiate(splashEffect, target.transform.position, Quaternion.identity);
+                effects.Add(effect);
+            }
+            
+            yield return new WaitForSeconds(1f);
+            
+            foreach (var effect in effects)
+            {
+                Destroy(effect);
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,13 +10,8 @@ public class DrugManager : MonoBehaviour
 
     private float drugs = 200;
 
-    public Text drugDisplay;
-
-    private void Start()
-    {
-        
-    }
-
+    public TMP_Text drugDisplay;
+ 
     private void Update()
     {
         string[] temp = drugDisplay.text.Split('$');

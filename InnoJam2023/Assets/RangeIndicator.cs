@@ -11,7 +11,7 @@ public class RangeIndicator : MonoBehaviour
     public void OnSelected()
     {
         var range = GetComponent<TowerManager>().TowerStats.Range;
-        RangeIndicatorImage.transform.localScale = new Vector3(0.4f * range, 0.4f*range, 1);
+        RangeIndicatorImage.transform.localScale = new Vector3(0.6f * range, 0.6f*range, 1);
         RangeIndicatorImage.gameObject.SetActive(true);
     }
 

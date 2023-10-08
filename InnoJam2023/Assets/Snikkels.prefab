@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5789218386432278311}
   - component: {fileID: 2356138221337381929}
   - component: {fileID: 8597024504839716981}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,11 +88,10 @@ GameObject:
   - component: {fileID: 8268805827707371687}
   - component: {fileID: 8651422035037329563}
   - component: {fileID: 561918110992811373}
-  - component: {fileID: 1029610422564986795}
   - component: {fileID: 217297504585510221}
   - component: {fileID: 7253682565435175185}
   - component: {fileID: -1608941562250352017}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Snikkels
   m_TagString: Enemies
   m_Icon: {fileID: 0}
@@ -188,28 +187,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &1029610422564986795
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5402747114041907143}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 1
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &217297504585510221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,8 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a0843c65e704534aa0e21eef9fd901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1029610422564986795}
-  speed: 5
+  speed: 10
   enemystats: {fileID: -1608941562250352017}
 --- !u!114 &7253682565435175185
 MonoBehaviour:
@@ -252,10 +228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb632ef38b7524b17b8b31c004203949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 10
+  baseSpeed: 8
   baseHealth: 200
-  baseDamage: 50
-  baseReward: 50
+  baseDamage: 20
+  baseReward: 10
 --- !u!1 &5598655179761049314
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +243,7 @@ GameObject:
   - component: {fileID: 1792598452567388874}
   - component: {fileID: 6378480905309275818}
   - component: {fileID: 3159495443049912334}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +319,7 @@ GameObject:
   - component: {fileID: 5612834962336120838}
   - component: {fileID: 3655562207403809979}
   - component: {fileID: 4717436794474818525}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

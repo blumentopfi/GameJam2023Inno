@@ -21,7 +21,7 @@ MonoBehaviour:
     Name: Drugs
     Icon: {fileID: 21300000, guid: 20673e076fbe442bca4e48af16715dd8, type: 3}
     Price: 150
-  - TowerPrefab: {fileID: 2907803663348834122, guid: de17c08a50f4a4950b4083bf730e0191, type: 3}
+  - TowerPrefab: {fileID: 2907803663348834122, guid: 26baaa24aedb243f5a47117e324449d4, type: 3}
     Name: Smoker
     Icon: {fileID: 21300000, guid: c2483670790794ebea869682f2efd096, type: 3}
     Price: 200

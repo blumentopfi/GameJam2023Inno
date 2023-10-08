@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97094c7433548fa949bd26ad49ddbf5, type: 3}
+  m_Name: TowerStats
+  m_EditorClassIdentifier: 
+  _name: ChainSplasher
+  _towerStats:
+  - Level: 1
+    Range: 10
+    StatComponents:
+    - {fileID: 11400000, guid: e1755d8b8f11a49769ef0dc8528c634a, type: 2}
+    - {fileID: 11400000, guid: 8749902f5ea54422c83b99a2dd00f965, type: 2}
+  - Level: 2
+    Range: 20
+    StatComponents:
+    - {fileID: 11400000, guid: 8749902f5ea54422c83b99a2dd00f965, type: 2}
+    - {fileID: 11400000, guid: e1755d8b8f11a49769ef0dc8528c634a, type: 2}
+  - Level: 3
+    Range: 30
+    StatComponents:
+    - {fileID: 11400000, guid: e1755d8b8f11a49769ef0dc8528c634a, type: 2}
+    - {fileID: 11400000, guid: 8749902f5ea54422c83b99a2dd00f965, type: 2}
+  - Level: 4
+    Range: 40
+    StatComponents:
+    - {fileID: 11400000, guid: e1755d8b8f11a49769ef0dc8528c634a, type: 2}
+    - {fileID: 11400000, guid: 8749902f5ea54422c83b99a2dd00f965, type: 2}
