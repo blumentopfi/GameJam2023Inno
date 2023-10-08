@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waves:
   - WaveNumber: 1
-    NumberOfEnemies: 1
+    NumberOfEnemies: 200
     TimeBetweenEnemies: 0.5
     TimeBetweenWaves: 3
     EnemyPrefab: {fileID: 5402747114041907143, guid: 318c366397c7a4250bc23c8cb4b8dffa, type: 3}

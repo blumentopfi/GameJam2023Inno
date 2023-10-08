@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 122fe669880b643b88a0a86ddeab9225
   - enabled: 1
-    path: Assets/Scenes/Map_ready/Map_ready_big 2.unity
-    guid: d248a107e56e148f49b757a806410b0a
+    path: Assets/Scenes/Map_ready/Map_alltogether 1.unity
+    guid: fa826c4d92466446d9f03d1808628d45
   - enabled: 1
     path: Assets/Scenes/Game over.unity
     guid: fd3bee377dd4349eeae4c5d31eefc619
