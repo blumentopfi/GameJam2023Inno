@@ -29,7 +29,3 @@ MonoBehaviour:
     Name: Chair
     Icon: {fileID: 21300000, guid: ed08c527f7084456a9e521ebda005220, type: 3}
     Price: 250
-  - TowerPrefab: {fileID: 2907803663348834122, guid: de17c08a50f4a4950b4083bf730e0191, type: 3}
-    Name: Chair
-    Icon: {fileID: 21300000, guid: ed08c527f7084456a9e521ebda005220, type: 3}
-    Price: 250
