@@ -20,6 +20,7 @@ namespace Spawner
         private int waveIndex = 0;
         private int enemiesReachedGoal = 0;
         private int enemyKillCount = 0;
+        private BabyHealth babyHealth;
 
         [SerializeField] private GameObject spawn;
 
@@ -36,6 +37,7 @@ namespace Spawner
 
         private void Start()
         {
+            babyHealth = FindObjectOfType<BabyHealth>();
             StartCoroutine(SpawnNextWave());
         }
 
@@ -93,6 +95,7 @@ namespace Spawner
                         if (waveIndex >= spawnConfig.Waves.Count)
                         {
                             //Last wave ended
+                            CrossSceneInformation.TraumaLevel = babyHealth.GetBabyHealth();
                             Debug.Log("Game Over");
                             return;
                         }

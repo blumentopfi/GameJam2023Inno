@@ -30,4 +30,6 @@ public class EnemyStats : MonoBehaviour
         get => baseReward;
         set => baseReward = value;
     }
+    
+    
 }

@@ -33,7 +33,7 @@ public class BabyHealth : MonoBehaviour
             traumaDisplay.text = $"Trauma:{displayHealth}%";
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage)    
     {
         currentHealth -= damage;
 
