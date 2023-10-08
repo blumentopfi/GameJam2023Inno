@@ -34,6 +34,8 @@ public class ItemController : MonoBehaviour
 
     [SerializeField] private WaveByWaveSpawner spawner;
 
+    [SerializeField] private Light light;
+
     private void Awake()
     {
         spawner.OnWaveFinished += OnWaveFinished;
@@ -54,7 +56,7 @@ public class ItemController : MonoBehaviour
     }
 
     private void OnWaveFinished(object sender, WaveFinishedEventArgs args)
-    {
+    { 
         if (wavesAgeUp.Contains(args.WaveIndex))
         {
             UpdateAge();

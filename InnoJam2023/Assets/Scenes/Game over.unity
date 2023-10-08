@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 1008841071}
   - component: {fileID: 1008841070}
   - component: {fileID: 1008841069}
+  - component: {fileID: 1008841073}
   m_Layer: 5
   m_Name: game over
   m_TagString: Untagged
@@ -461,6 +462,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1008841073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008841068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf25f909979154fa8b21e576da0ff8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endScreen: {fileID: 1698866347}
+  traumas:
+  - minTrauma: 100
+    text: You successfully managed to keep the Trauma of that Child. It is now addicted
+      to cocaine. Congrats.
+  - minTrauma: 100
+    text: Look at that. Keeping all that trauma caused that child to jump out the
+      window the next day. Yeah Buddy.
+  - minTrauma: 50
+    text: Some of that trauma was healed. This resulted in the kid growing up to
+      be a finance bro. Do better.
+  - minTrauma: 75
+    text: You almost kept all of the Trauma up. Nice job.
 --- !u!1 &1698866345
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,10 +519,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1008841072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 0, y: 640}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1698866347
 MonoBehaviour:
@@ -518,7 +544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ded
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
