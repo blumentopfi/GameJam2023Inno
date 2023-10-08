@@ -15,7 +15,8 @@ public class ItemUpdater : MonoBehaviour
     // models[level][state], higher state->more nicer
     private GameObject[,] models = new GameObject[3, 3];
 
-    private int[] currentlyChosen = { 0, 0 }, newChosen = { 0, 0 };
+    private int chosenAge = 0;
+    private int chosenState = 0;
 
     private void Start()
     {
@@ -39,29 +40,29 @@ public class ItemUpdater : MonoBehaviour
             } 
         }
 
-        ChooseNextModel(ItemController.tendency.neutral, false);
+        ChooseNextModel(ItemController.tendency.neutral);
     }
 
-    public void ChooseNextModel(ItemController.tendency tendency, bool levelsUp)
+    public void UpdateAge()
     {
-        if (levelsUp && currentlyChosen[0] < 2)
+        if (chosenAge >= 2)
         {
-            newChosen[0] = currentlyChosen[0] + 1;
+            return;
         }
 
-        if (tendency == ItemController.tendency.neutral)
+        chosenAge++;
+        UpdateModel();
+    }
+    public void ChooseNextModel(ItemController.tendency tendency)
+    { 
+        if (tendency == ItemController.tendency.nice && chosenState < 2)
         {
-            newChosen[1] = currentlyChosen[1];
+            chosenState++;
         }
 
-        if (tendency == ItemController.tendency.nice && currentlyChosen[1] < 2)
+        if (tendency == ItemController.tendency.wasted && chosenState > 0)
         {
-            newChosen[1] = currentlyChosen[1] + 1;
-        }
-
-        if (tendency == ItemController.tendency.wasted && currentlyChosen[1] > 0)
-        {
-            newChosen[1] = currentlyChosen[1] - 1;
+            chosenState--;
         }
 
         UpdateModel();
@@ -77,8 +78,7 @@ public class ItemUpdater : MonoBehaviour
                 models[i, j].gameObject.SetActive(false); 
             } 
         }
-        models[newChosen[0],newChosen[1]].gameObject.SetActive(true); 
-        currentlyChosen = newChosen;
-        
+        models[chosenAge, chosenState].gameObject.SetActive(true);  
     }
+    
 }

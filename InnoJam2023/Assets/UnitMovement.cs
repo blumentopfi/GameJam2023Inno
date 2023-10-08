@@ -1,16 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class UnitMovement : MonoBehaviour
 {
-    private EventHandler reachedGoalHandler;
-
+    private EventHandler goalReachedHandler;
+    
     [SerializeField] private float speed;
 
     private double tolerance = 0.6;
@@ -20,11 +20,10 @@ public class UnitMovement : MonoBehaviour
 
     public event EventHandler OnReachedGoal
     {
-        add => reachedGoalHandler += value;
-        remove => reachedGoalHandler -= value;
+        add => goalReachedHandler += value;
+        remove => goalReachedHandler -= value;
     }
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         waypoints = FindObjectOfType<Waypoints>().waypoints;
@@ -39,19 +38,19 @@ public class UnitMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, waypoints[currentWaypoint].position) < tolerance)
         {
-            currentWaypoint++;
-            if (currentWaypoint >= waypoints.Count)
-            {
-                var babyHealth = FindObjectOfType<BabyHealth>();
+            if (currentWaypoint >= waypoints.Count-1)
+            { 
+                    var babyHealth = FindObjectOfType<BabyHealth>();
                 if (babyHealth != null)
                 {
                     babyHealth.TakeDamage(enemystats.baseDamage);
                 }
 
-                reachedGoalHandler?.Invoke(gameObject, EventArgs.Empty);
+                goalReachedHandler?.Invoke(gameObject, EventArgs.Empty);
                 Destroy(gameObject);
                 return;
             }
+            currentWaypoint++;
         }
 
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position,

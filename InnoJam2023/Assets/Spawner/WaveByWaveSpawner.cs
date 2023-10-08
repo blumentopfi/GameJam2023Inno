@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -20,7 +21,7 @@ namespace Spawner
         private int enemyKillCount = 0;
 
         [SerializeField] private GameObject spawn;
-
+         
         public event EventHandler<WaveFinishedEventArgs> OnWaveFinished
         {
             add => waveFinishedHandler += value;
@@ -33,7 +34,7 @@ namespace Spawner
         }
 
         private void Start()
-        {
+        { 
             StartCoroutine(SpawnNextWave());
         }
 
@@ -42,8 +43,7 @@ namespace Spawner
             if (waveIndex >= spawnConfig.Waves.Count)
             {
                 yield break;
-            }
-            
+            } 
             enemiesReachedGoal -= enemiesReachedGoal;
             enemyKillCount = 0;
             
@@ -84,6 +84,7 @@ namespace Spawner
                         this, 
                         new WaveFinishedEventArgs(
                             waveSize, 
+                            waveIndex,
                             enemyKillCount, 
                             enemiesReachedGoal
                         )

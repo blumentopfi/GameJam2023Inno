@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using DefaultNamespace;
 using Spawner;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ItemController : MonoBehaviour
 {
@@ -12,8 +15,7 @@ public class ItemController : MonoBehaviour
         wasted
     }
 
-    public int[] wavesCharLevelsUp;
-    public int[] wavesRoomUpdates;
+    public int[] wavesAgeUp;
 
     private int currentWaveCount = 1;
     private int maxWaveCount = 15;
@@ -21,83 +23,86 @@ public class ItemController : MonoBehaviour
 
     private int maxLife = 100, newLife;
     private BabyHealth health;
-    
+
     private ItemUpdater[] updateableItems;
-    private ItemUpdaterChild childItem;
+    private List<ItemUpdater> itemsList;
+
 
     [SerializeField] private bool demoRun;
     [SerializeField] private int goToLevel = 0;
     [SerializeField] private tendency demoTendency = tendency.wasted;
 
-    [SerializeField] private Spawn spawner;
+    [SerializeField] private WaveByWaveSpawner spawner;
 
     private void Awake()
     {
-        // spawner.OnWaveChange += OnWaveChange;
+        spawner.OnWaveFinished += OnWaveFinished;
+        itemsList = new();
     }
- 
+
     void Start()
     {
-        health = FindObjectOfType<BabyHealth>(); 
+        health = FindObjectOfType<BabyHealth>();
+        updateableItems = FindObjectsByType<ItemUpdater>(FindObjectsSortMode.None);
 
         maxWaveCount = spawner.spawnConfig.Waves.Count;
 
-        childItem = FindObjectOfType<ItemUpdaterChild>();
-        updateableItems = FindObjectsByType<ItemUpdater>(FindObjectsSortMode.None);
-
-        if (demoRun)
+        foreach (var t in updateableItems)
         {
-            for (int i = goToLevel - 1; i > 0; i--)
-            {
-                foreach (var updateableItem in updateableItems)
-                {
-                    updateableItem.ChooseNextModel(demoTendency, true);
-                }
-            }
+            itemsList.Add(t);
         }
     }
 
-    private void OnWaveChange(object sender, int e)
+    private void OnWaveFinished(object sender, WaveFinishedEventArgs args)
     {
-        if (wavesRoomUpdates.Contains(e))
+        if (wavesAgeUp.Contains(args.WaveIndex))
         {
-            newLife = health.GetBabyHealth();
-            currentTendency = CalculateCurrentTendency();
-            UpdateItemController(); 
+            UpdateAge();
         }
+
+        UpdateItems(
+            args.WaveSize,
+            args.EnemyKillCount,
+            args.EnemyReachedGoalCount
+        );
     }
 
-    public void UpdateItemController()
+    public void UpdateAge()
     {
-        currentWaveCount++;
-        // var charLevelsUp = wavesCharLevelsUp.Contains(currentWaveCount);
-        //   
-        // if (charLevelsUp)
-        // {
-        //   childItem.ChooseNextModel(currentTendency, true);
-        // }
-
         foreach (var updateableItem in updateableItems)
         {
-            updateableItem.ChooseNextModel(currentTendency, true);
+            updateableItem.UpdateAge();
         }
     }
 
-    private tendency CalculateCurrentTendency()
+    private void UpdateItems(int waveSize, int enemiesKilled, int enemiesReachedGoal)
     {
-        //TODO: Rework
-        var lifePerc = newLife/maxLife; 
-        
-        if (lifePerc > 0.7)
+        if (waveSize <= 0)
         {
-            return tendency.wasted;
-        } 
-        
-        if (lifePerc >= 0.5)
+            return;
+        }
+        var successRate =   enemiesKilled/waveSize;
+        var itemsChangeWastedSize = successRate * updateableItems.Length;
+        for (int i = 0; i <= itemsChangeWastedSize; i++)
         {
-            return tendency.neutral;
+            var randomIndex = Mathf.FloorToInt(Random.Range(0, updateableItems.Length));
+            itemsList.ElementAt(randomIndex).ChooseNextModel(tendency.wasted);
+            itemsList.RemoveAt(randomIndex);
         }
 
-        return tendency.nice;
+        var failRate = enemiesReachedGoal/waveSize;
+        var itemsChangeNiceSize = failRate * updateableItems.Length;
+        for (int i = 0; i <= itemsChangeNiceSize; i++)
+        {
+            var randomIndex = Mathf.FloorToInt(Random.Range(0, updateableItems.Length));
+            itemsList.ElementAt(randomIndex).ChooseNextModel(tendency.nice);
+            itemsList.RemoveAt(randomIndex);
+        }
+
+        // Reset List
+        foreach (var t in updateableItems)
+        {
+            itemsList.Add(t);
+        }
     }
 }

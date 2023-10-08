@@ -2303,17 +2303,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3154613244362300883, guid: 19d232e0c12a042debc8f9ac2c022feb, type: 3}
   m_PrefabInstance: {fileID: 1902617224}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &597315229 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5086670505185766747, guid: 19d232e0c12a042debc8f9ac2c022feb, type: 3}
-  m_PrefabInstance: {fileID: 1902617224}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597315228}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40aab599b39af4e0b908554c2f91f457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &597315231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4993,12 +4982,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc973c709e7d04acc8f05987ab426c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavesCharLevelsUp: 0400000008000000
-  wavesRoomUpdates: 0400000008000000
+  wavesAgeUp: 050000000a000000
   demoRun: 0
   goToLevel: 3
   demoTendency: 2
-  spawner: {fileID: 597315229}
+  spawner: {fileID: 597315231}
 --- !u!4 &1548914811
 Transform:
   m_ObjectHideFlags: 0
