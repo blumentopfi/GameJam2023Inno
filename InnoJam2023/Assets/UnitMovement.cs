@@ -39,8 +39,8 @@ public class UnitMovement : MonoBehaviour
     
     public void DecreaseSpeed(float value)
     {
-        float minSpeed = 0.1f;
-        speed = Mathf.Min(minSpeed, speed * value);
+        float minSpeed = 0.5f;
+        speed = Mathf.Max(minSpeed, speed * value);
     }
 
     // Update is called once per frame
