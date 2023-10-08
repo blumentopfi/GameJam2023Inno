@@ -21,7 +21,7 @@ public class EndScreenText : MonoBehaviour
         private kekf getRandomTraumaLevel(float leveldecoratorminimumlevel)
         {
             // Filter traumas based on the condition minTrauma > leveldecoratorminimumlevel
-            var filteredTraumas = traumas.Where(trauma => trauma.minTrauma > leveldecoratorminimumlevel).ToList();
+            var filteredTraumas = traumas.Where(trauma => trauma.minTrauma >= leveldecoratorminimumlevel).ToList();
 
             // Check if there are any matching traumas
             if (filteredTraumas.Any())

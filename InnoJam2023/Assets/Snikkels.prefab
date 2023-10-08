@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb632ef38b7524b17b8b31c004203949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 8
+  baseSpeed: 9
   baseHealth: 200
   baseDamage: 20
   baseReward: 10

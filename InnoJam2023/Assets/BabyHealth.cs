@@ -31,6 +31,7 @@ public class BabyHealth : MonoBehaviour
     {
         displayHealth = Mathf.FloorToInt(currentHealth / maxHealth * 100) ;
             traumaDisplay.text = $"Trauma:{displayHealth}%";
+            CrossSceneInformation.TraumaLevel = displayHealth;
     }
 
     public void TakeDamage(float damage)    
