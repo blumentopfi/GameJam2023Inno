@@ -34,6 +34,8 @@ public class ItemController : MonoBehaviour
 
     [SerializeField] private WaveByWaveSpawner spawner;
 
+    [SerializeField] private Light light;
+
     private void Awake()
     {
         spawner.OnWaveFinished += OnWaveFinished;
