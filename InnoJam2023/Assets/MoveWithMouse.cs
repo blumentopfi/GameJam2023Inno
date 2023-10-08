@@ -26,7 +26,7 @@ public class MoveWithMouse : MonoBehaviour
         this.TowerPrefab.gameObject.layer = 2;
         currentPrice = price;
         drugManager = FindObjectOfType<DrugManager>();
-        TowerPrefab.GetComponent<TowerManager>().enabled = true;
+        TowerPrefab.GetComponent<TowerManager>().enabled = false;
     }
     
     // Update is called once per frame

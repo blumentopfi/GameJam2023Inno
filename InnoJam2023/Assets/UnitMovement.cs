@@ -36,6 +36,12 @@ public class UnitMovement : MonoBehaviour
 
         _spriteRenderer.sprite = dreamSprites[Random.Range(0, dreamSprites.Length)];
     }
+    
+    public void DecreaseSpeed(float value)
+    {
+        float minSpeed = 0.1f;
+        speed *= Mathf.Min(minSpeed, value);
+    }
 
     // Update is called once per frame
     void Update()

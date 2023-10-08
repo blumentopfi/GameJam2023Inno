@@ -7,7 +7,7 @@ namespace Towers.WeaponModifier
     {
         public override void ApplyBuff(GameObject target, TowerStats statsByLevel)
         {
-            Debug.LogError("Implementier mich du Hund");
+            target.GetComponent<UnitMovement>().DecreaseSpeed(0.2f);
         }
     }
 }
