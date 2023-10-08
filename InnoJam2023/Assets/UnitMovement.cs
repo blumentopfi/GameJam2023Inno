@@ -12,6 +12,8 @@ public class UnitMovement : MonoBehaviour
     private EventHandler goalReachedHandler;
     
     [SerializeField] private float speed;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Sprite[] dreamSprites;
 
     private double tolerance = 0.6;
     public EnemyStats enemystats;
@@ -31,6 +33,8 @@ public class UnitMovement : MonoBehaviour
         GetComponent<MeshRenderer>().material.color = Random
             .ColorHSV(hueMax: 0, hueMin: 1, saturationMax: 1, saturationMin: 1, valueMax: 1, valueMin: 1, alphaMin: 1,
                 alphaMax: 1);
+
+        _spriteRenderer.sprite = dreamSprites[Random.Range(0, dreamSprites.Length)];
     }
 
     // Update is called once per frame

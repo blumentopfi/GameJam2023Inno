@@ -4987,6 +4987,7 @@ MonoBehaviour:
   goToLevel: 3
   demoTendency: 2
   spawner: {fileID: 597315231}
+  light: {fileID: 0}
 --- !u!4 &1548914811
 Transform:
   m_ObjectHideFlags: 0

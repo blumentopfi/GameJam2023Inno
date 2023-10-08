@@ -34,6 +34,8 @@ public class ItemController : MonoBehaviour
 
     [SerializeField] private WaveByWaveSpawner spawner;
 
+    [SerializeField] private Light light;
+
     private void Awake()
     {
         spawner.OnWaveFinished += OnWaveFinished;
@@ -54,7 +56,7 @@ public class ItemController : MonoBehaviour
     }
 
     private void OnWaveFinished(object sender, WaveFinishedEventArgs args)
-    {
+    { 
         if (wavesAgeUp.Contains(args.WaveIndex))
         {
             UpdateAge();
@@ -81,20 +83,19 @@ public class ItemController : MonoBehaviour
         {
             return;
         }
-        var successRate =   enemiesKilled/waveSize;
+        var successRate =   (float) enemiesKilled/waveSize; 
         var itemsChangeWastedSize = successRate * updateableItems.Length;
-        for (int i = 0; i <= itemsChangeWastedSize; i++)
+        for (int i = 0; i < itemsChangeWastedSize; i++)
         {
-            var randomIndex = Mathf.FloorToInt(Random.Range(0, updateableItems.Length));
+            var randomIndex = Mathf.FloorToInt(Random.Range(0, itemsList.Count));
             itemsList.ElementAt(randomIndex).ChooseNextModel(tendency.wasted);
             itemsList.RemoveAt(randomIndex);
         }
 
-        var failRate = enemiesReachedGoal/waveSize;
-        var itemsChangeNiceSize = failRate * updateableItems.Length;
-        for (int i = 0; i <= itemsChangeNiceSize; i++)
+        var itemsChangeNiceSize = itemsList.Count;
+        for (int i = 0; i < itemsChangeNiceSize; i++)
         {
-            var randomIndex = Mathf.FloorToInt(Random.Range(0, updateableItems.Length));
+            var randomIndex = Mathf.FloorToInt(Random.Range(0, itemsList.Count));
             itemsList.ElementAt(randomIndex).ChooseNextModel(tendency.nice);
             itemsList.RemoveAt(randomIndex);
         }

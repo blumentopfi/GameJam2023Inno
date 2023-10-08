@@ -16,7 +16,7 @@ public class ItemUpdater : MonoBehaviour
     private GameObject[,] models = new GameObject[3, 3];
 
     private int chosenAge = 0;
-    private int chosenState = 0;
+    private int chosenState = 1;
 
     private void Start()
     {
@@ -50,8 +50,7 @@ public class ItemUpdater : MonoBehaviour
             return;
         }
 
-        chosenAge++;
-        UpdateModel();
+        chosenAge++; 
     }
     public void ChooseNextModel(ItemController.tendency tendency)
     { 
