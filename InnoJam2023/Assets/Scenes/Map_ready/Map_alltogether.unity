@@ -448,8 +448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065c8e756273248cfa9571034dee6e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   traumaDisplay: {fileID: 7515123979890789155}
+  _spawnerConfiguration: {fileID: 11400000, guid: d447d3074c61d4ea5980eeebe0596280, type: 2}
 --- !u!1 &118649781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,7 +1386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &364187587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4982,7 +4982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc973c709e7d04acc8f05987ab426c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavesAgeUp: 050000000a000000
+  wavesAgeUp: 010000000a000000
   demoRun: 0
   goToLevel: 3
   demoTendency: 2
