@@ -4982,7 +4982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc973c709e7d04acc8f05987ab426c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavesAgeUp: 010000000a000000
+  wavesAgeUp: 0300000007000000
   demoRun: 0
   goToLevel: 3
   demoTendency: 2

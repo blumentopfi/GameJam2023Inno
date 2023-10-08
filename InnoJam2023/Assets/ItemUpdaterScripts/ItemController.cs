@@ -55,6 +55,7 @@ public class ItemController : MonoBehaviour
 
     private void OnWaveFinished(object sender, WaveFinishedEventArgs args)
     {
+        Debug.Log("Hi, i am OnWaveFinished in ItemController :)");
         if (wavesAgeUp.Contains(args.WaveIndex))
         {
             UpdateAge();
