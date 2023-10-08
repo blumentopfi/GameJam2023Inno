@@ -85,12 +85,10 @@ namespace Spawner
                         Debug.Log("Game Over");
                         return;
                     }
-                    
-                    var waveSize = spawnConfig.Waves[waveIndex].NumberOfEnemies;
                     waveFinishedHandler?.Invoke(
                         this, 
                         new WaveFinishedEventArgs(
-                            waveSize, 
+                            spawnConfig.Waves[waveIndex].NumberOfEnemies, 
                             waveIndex,
                             enemyKillCount, 
                             enemiesReachedGoal
