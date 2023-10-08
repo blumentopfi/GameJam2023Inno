@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndScreenText : MonoBehaviour
 {
@@ -36,6 +37,11 @@ public class EndScreenText : MonoBehaviour
                 // Handle the case when no matching trauma is found (returning an empty struct or default value, etc.)
                 return new kekf();
             }
+        }
+        
+        public void tryAgain()
+        {
+            SceneManager.LoadScene(1);
         }
 }
 

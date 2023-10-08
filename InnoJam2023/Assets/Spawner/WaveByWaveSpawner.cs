@@ -6,6 +6,7 @@ using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 namespace Spawner
 {
@@ -96,7 +97,7 @@ namespace Spawner
                         {
                             //Last wave ended
                             CrossSceneInformation.TraumaLevel = babyHealth.GetBabyHealth();
-                            Debug.Log("Game Over");
+                            SceneManager.LoadScene(2);
                             return;
                         }
 
