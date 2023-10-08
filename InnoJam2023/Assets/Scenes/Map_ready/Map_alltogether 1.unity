@@ -1301,6 +1301,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6135718770304288752, guid: 118d07f0df32e4c179fce3430ff5cdd2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.6143645
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135718770304288752, guid: 118d07f0df32e4c179fce3430ff5cdd2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.6143645
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135718770304288752, guid: 118d07f0df32e4c179fce3430ff5cdd2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456982020933513744, guid: 118d07f0df32e4c179fce3430ff5cdd2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.6156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456982020933513744, guid: 118d07f0df32e4c179fce3430ff5cdd2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.6156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456982020933513744, guid: 118d07f0df32e4c179fce3430ff5cdd2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.7372549
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
