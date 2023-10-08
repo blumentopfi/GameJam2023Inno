@@ -27,6 +27,7 @@ namespace Towers
     {
         public int Level;
         public int Range;
+        public int UpgradeCost; 
         public List<IStatComponent> StatComponents;
         
         public T GetStatComponent<T>() where T : IStatComponent

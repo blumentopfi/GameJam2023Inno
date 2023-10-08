@@ -40,7 +40,7 @@ public class BuildMenuPresenter : MonoBehaviour
             return;
         }
 
-            var gameObject = Instantiate(dataTowerPrefab, new Vector3(0,0,0), Quaternion.identity);
+        var gameObject = Instantiate(dataTowerPrefab, new Vector3(0,0,0), Quaternion.identity);
         
         builder.SetTowerPrefab(gameObject, dataPrice);
     }

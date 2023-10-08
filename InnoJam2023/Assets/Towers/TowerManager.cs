@@ -17,6 +17,8 @@ namespace Towers
         
         [SerializeField]
         private GameObject maxUpgradeLevelReachedText;
+
+        private DrugManager DrugManager => FindObjectOfType<DrugManager>();
         
         private TowerStats _towerStats;
         private TowerTarget _towerTarget;
@@ -78,6 +80,13 @@ namespace Towers
             {
                 return;
             }
+
+            if (!DrugManager.canBuild(_towerStats.UpgradeCost))
+            {
+                return;
+            }
+            
+            DrugManager.decreaseDrugs(_towerStats.UpgradeCost);
             level += 1;
             UpdateTowerStats();
             
