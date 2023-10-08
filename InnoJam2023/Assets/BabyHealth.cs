@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BabyHealth : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class BabyHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
 
     }
