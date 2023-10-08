@@ -79,6 +79,13 @@ namespace Spawner
                 spawnedEnemies.Remove(enemy);
                 if (spawnedEnemies.Count == 0)
                 {
+                    if (waveIndex >= spawnConfig.Waves.Count)
+                    {
+                        //Last wave ended
+                        Debug.Log("Game Over");
+                        return;
+                    }
+                    
                     var waveSize = spawnConfig.Waves[waveIndex].NumberOfEnemies;
                     waveFinishedHandler?.Invoke(
                         this, 
